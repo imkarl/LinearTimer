@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (LinearTimer.isStart()) {
                     LinearTimer.stop();
-                    mShowText.append("stop ing...");
+                    mShowText.setText("\nstop ing...\n");
                 } else {
                     LinearTimer.start();
-                    mShowText.setText("start ing...\n");
+                    mShowText.setText("\nstart ing...\n");
                     LinearTimer.addTimeListener(System.currentTimeMillis()+2*60*1000, new OnLinearTimerListener() {
                         @Override
                         public void onProgress(long time, int count) {

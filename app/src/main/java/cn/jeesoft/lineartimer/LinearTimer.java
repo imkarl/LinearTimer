@@ -39,6 +39,7 @@ public class LinearTimer {
                     break;
                 case ACTION_ON_FINISH:
                     listener.onFinish(time);
+                    removeListener(listener);
                     break;
             }
         }
@@ -88,7 +89,6 @@ public class LinearTimer {
 					// 判断是否执行完成
 					if (count <= 1) {
                         sendHandlerAction(ACTION_ON_FINISH, listener, currentTime, count);
-						removeListener(listener);
 					}
 				}
 				
